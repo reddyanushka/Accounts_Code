@@ -1,0 +1,125 @@
+<style>
+    @media print{
+        button,.btn,#feeDate,#im{
+          visibility:hidden;
+        }
+      }
+      @page { size: auto;  margin: 0mm; }
+</style>
+
+<div ng-app="library" ng-controller="Expenditure" ng-init='section=true;nodata=true;amountDets=true;loading=false;'>
+        <!-- header logo: style can be found in header.less -->
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                <h4 class="m-0 text-dark">Expenditure &nbsp;&nbsp;&nbsp;</h4>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Expenditure</li>
+                </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <section class="content">
+            <div ng-controller="emp_report_ctrl" class="box-body ng-scope">
+            
+            <div class="box box-warning">
+            <div class="box-body">
+            <!--<pre ng-bind="data|json"></pre>-->
+                     <div class="row form-group">
+                     <div class="col-md-6">
+              <select ng-model="cashier" class="form-control ng-pristine ng-untouched ng-valid" ng-change="get_cashierdata(cashier)">
+                            <option value="" ng-selected="selected">Select Cashier</option>
+                            <!-- ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="5" class="ng-binding ng-scope">P.SRAVANA KUMAR</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="6" class="ng-binding ng-scope">B.VENKATA RAMIREDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="8" class="ng-binding ng-scope">G.PRASAD</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="11" class="ng-binding ng-scope">TIKKA PRASAD</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="15" class="ng-binding ng-scope">A.RAMBABU</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="17" class="ng-binding ng-scope">V.SRINIVAS RAO</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="18" class="ng-binding ng-scope">A.LAVANYA</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="21" class="ng-binding ng-scope">P.RAMAKRISHNA</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="24" class="ng-binding ng-scope">S.RAVINDRA KUMAR</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="27" class="ng-binding ng-scope">P.SOMAREDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="30" class="ng-binding ng-scope">P.SRINIVAS</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="34" class="ng-binding ng-scope">C.S.R.KUMARI</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="35" class="ng-binding ng-scope">K.SOLOMON RAJU</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="37" class="ng-binding ng-scope">Y.SATYANARAYANA</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="41" class="ng-binding ng-scope">JC</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="61" class="ng-binding ng-scope">M.JAYASREE</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="64" class="ng-binding ng-scope">G.PADMAVATHI</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="70" class="ng-binding ng-scope">CH PRATHAP REDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="74" class="ng-binding ng-scope">P.PADMA</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="78" class="ng-binding ng-scope">U.K.DURGA(SPKL)</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="84" class="ng-binding ng-scope">GVLAKSHMI</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="85" class="ng-binding ng-scope">DANNINA RAJU</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="86" class="ng-binding ng-scope">A.D.V.S.N.REDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="87" class="ng-binding ng-scope">rambabu</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="88" class="ng-binding ng-scope">P.Nagi Reddy</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="89" class="ng-binding ng-scope">P.R.K.REDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="90" class="ng-binding ng-scope">ammireddy</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="123" class="ng-binding ng-scope">B.V.GANAPATHI</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="128" class="ng-binding ng-scope">B.Ramya Devi</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="160" class="ng-binding ng-scope">T.GANGADHAR(CBSE)</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="170" class="ng-binding ng-scope">N.ANIL KUMAR</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="172" class="ng-binding ng-scope">P.Vani Reddy</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="173" class="ng-binding ng-scope">ISD.PRABHAVATHI(DSC)</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="189" class="ng-binding ng-scope">I.prasad rao(BED)</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="194" class="ng-binding ng-scope">K.ARUNA KUMARI(AWDC)</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="195" class="ng-binding ng-scope">KSRAJAREDDY(PGKKD)</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="196" class="ng-binding ng-scope">JCPKL</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="198" class="ng-binding ng-scope">P.SATYANARAYANA REDDY(CBSE)</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="199" class="ng-binding ng-scope">n.ramakrishna</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="211" class="ng-binding ng-scope">MLNREDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="215" class="ng-binding ng-scope">A.S.JAGADEESH</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="220" class="ng-binding ng-scope">satyakala.ch</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="221" class="ng-binding ng-scope">Ch.Sita ramudu</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="227" class="ng-binding ng-scope">G PRASAD</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="228" class="ng-binding ng-scope">N ANIL KUMAR</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="229" class="ng-binding ng-scope">K.SOLOMON RAJU</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="230" class="ng-binding ng-scope">I PRASAD RAO</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="231" class="ng-binding ng-scope">M L N Reddy</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="233" class="ng-binding ng-scope">K.SATYANARAYANA</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="238" class="ng-binding ng-scope">sitaramsurubhotla</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="251" class="ng-binding ng-scope">CH.CHELLAREDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="259" class="ng-binding ng-scope">PVSURYANARAYANA</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="268" class="ng-binding ng-scope">KUMAR.AVSP</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="269" class="ng-binding ng-scope">S.Jyothi Patnaik(adcasl-bschool)</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="270" class="ng-binding ng-scope">N S VISWESWARA RAO</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="272" class="ng-binding ng-scope">BAKI RAMESH REDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="273" class="ng-binding ng-scope">S.SURESHREDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="274" class="ng-binding ng-scope">BSSARMA</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="283" class="ng-binding ng-scope">CHVSRLREDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="284" class="ng-binding ng-scope">G.SATYANARAYANA</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="291" class="ng-binding ng-scope">Anisetti sanjeevi</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="292" class="ng-binding ng-scope">SATHI BABU SEELAM</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="294" class="ng-binding ng-scope">vijay</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="298" class="ng-binding ng-scope">KPRAKASH</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="300" class="ng-binding ng-scope">KADA ARUNA REKHA</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="312" class="ng-binding ng-scope">KSNMURTHY(ADCGPT)</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="313" class="ng-binding ng-scope">Chaitanya Swaroop P</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="314" class="ng-binding ng-scope">Meka Saibaba</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="318" class="ng-binding ng-scope">ADCGPTCASH</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="326" class="ng-binding ng-scope">A SUDHAKARA REDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="329" class="ng-binding ng-scope">GV LAKHSMI</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="332" class="ng-binding ng-scope">ADCTPGOPERATOR</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="333" class="ng-binding ng-scope">sunil</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="337" class="ng-binding ng-scope">A.SUDHAKARREDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="338" class="ng-binding ng-scope">P.UMA LAKSHMI</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="345" class="ng-binding ng-scope">P. Suresh Reddy</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="346" class="ng-binding ng-scope">M Vijaya Lakshmi</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="347" class="ng-binding ng-scope"> P Nagamani</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="351" class="ng-binding ng-scope">R REVATHI</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="352" class="ng-binding ng-scope">pprasad</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="372" class="ng-binding ng-scope">RAMA.P</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="373" class="ng-binding ng-scope">A.SUBBIREDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="375" class="ng-binding ng-scope">Ch Umamaheswarreddy</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="377" class="ng-binding ng-scope">nvijayalakshmi</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="379" class="ng-binding ng-scope">SANAPALA VENKATA RAMANA</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="381" class="ng-binding ng-scope">gowthamigrace</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="382" class="ng-binding ng-scope">KVVRAMANA</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="383" class="ng-binding ng-scope">k.sandeepreddy</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="386" class="ng-binding ng-scope">ssrikanth</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="398" class="ng-binding ng-scope">Lakshyacashier</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="404" class="ng-binding ng-scope">ESRINIVAS</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="408" class="ng-binding ng-scope">K.UMA MAHESH REDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="412" class="ng-binding ng-scope">GUTTULA NAGA LAKSHMI</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="414" class="ng-binding ng-scope">Brajesh</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="424" class="ng-binding ng-scope">S Tagore</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="425" class="ng-binding ng-scope">R VARA LAKSHMI</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="427" class="ng-binding ng-scope">School Operator</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="430" class="ng-binding ng-scope">Durga Devi</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="431" class="ng-binding ng-scope">Chshankar</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="438" class="ng-binding ng-scope">P.vanitha</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="441" class="ng-binding ng-scope">APPAREDDY A</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="442" class="ng-binding ng-scope">VSVV SATYANARAYANA</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="447" class="ng-binding ng-scope">apspklcashier</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="448" class="ng-binding ng-scope">vkesavarao</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="449" class="ng-binding ng-scope">ajcsklmcashier</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="451" class="ng-binding ng-scope">CH.RAMESH</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="454" class="ng-binding ng-scope">Mettu Durga Srinivas Raj</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="461" class="ng-binding ng-scope">K NAGAMANI</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="464" class="ng-binding ng-scope">DSCCASHIER</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="466" class="ng-binding ng-scope">AWDCRJYCASHIER</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="467" class="ng-binding ng-scope">ADCKKD CASHIER</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="468" class="ng-binding ng-scope">V.TANUJAA</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="469" class="ng-binding ng-scope">BAGATHI APPARAO</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="471" class="ng-binding ng-scope">SANAPALA SRIKANTH</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="479" class="ng-binding ng-scope">schoolreports</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="481" class="ng-binding ng-scope">A.SATYA SWAROOP REDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="505" class="ng-binding ng-scope">CH.TATAMMAREDDY</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="510" class="ng-binding ng-scope">B.SRINIVASARARAO</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="511" class="ng-binding ng-scope">K V SASIKALA</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="514" class="ng-binding ng-scope">TVDPRASAD</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="515" class="ng-binding ng-scope">awdckkdcashier</option><!-- end ngRepeat: x in cashierlist --><option ng-repeat="x in cashierlist" value="517" class="ng-binding ng-scope">ADCBVM CASHIER</option><!-- end ngRepeat: x in cashierlist -->
+            </select>
+             
+            </div>
+                         <div class="pull-left col-md-4">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="daterange-btn" data-ajax="false" value="12/01/2021 - 12/01/2021" name="select_date">
+                                    <span class="input-group-btn">
+                                        <div class="col-md-8">	
+                                            <a href="#" class="btn btn-primary" onclick="get_date();">Submit</a>
+                                        </div>
+                                    </span>
+                              </div>
+                         </div> 
+                         <div class="col-md-2 text-right">
+                         <a href="#" download="cashier_exp.xls" onclick="return ExcellentExport.excel(this, 'exp_list', 'Sheet Name Here');"> <i class="fa fa-file-excel-o fa-2x"></i></a>&nbsp; <a href="#" onclick="printTable('exp_list'); return false;"><i class="fa fa-print  fa-2x"></i></a> 
+                         </div>
+                         <div style="clear:both"></div>
+                     </div>
+            
+            
+            <div class="form-group" id="exp_list">
+             <table class="table table-bordered" id="example" border="1" cellpadding="3" cellspacing="0">
+                  <thead>
+                    <tr class="info" ng-init="expamount.total.amount=0">
+                      <th style="text-align:center;color:DodgerBlue;;font-weight: normal;">Sno</th>
+                       <th style="text-align:center;color:DodgerBlue;;font-weight: normal;">Receipt</th>
+                      <th style="text-align:center;color:DodgerBlue;;font-weight: normal;">Date</th>
+                       <th style="text-align:center;color:DodgerBlue;;font-weight: normal;">Category</th>
+                        <th style="text-align:center;color:DodgerBlue;;font-weight: normal;">Description</th>
+                         <th style="text-align:center;color:DodgerBlue;;font-weight: normal;">Amount</th>
+                        <th style="text-align:center;color:DodgerBlue;;font-weight: normal;">Payment Type</th>
+                      
+                        
+                    </tr>
+                  </thead>
+            <tbody><!-- ngRepeat: x in voucherlist | filter: { cancelled: '0'} -->
+            
+            
+            <tr>
+            <td colspan="5" style="text-align:center; font-weight:bold;color:black;">Total</td>
+            <td style="text-align:right; font-weight:bold" class="ng-binding">0</td>
+            <td>&nbsp;</td>
+            </tr>
+            
+            
+            </tbody></table>
+            </div>
+            
+                          <h4 class="box-title"style="text-align:center;color:black;font-weight: normal;">Cancelled Receipts</h4>
+            
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr class="bg-info">
+                    <tr class="info" ng-init="expamount.total.amount=0" >
+                      <th style="text-align:center;color:DodgerBlue;font-weight: normal;">Sno</th>
+                       <th style="text-align:center;color:DodgerBlue;font-weight: normal;">Receipt</th>
+                      <th style="text-align:center;color:DodgerBlue;font-weight: normal;">Date</th>
+                       <th style="text-align:center;color:DodgerBlue;font-weight: normal;">Category</th>
+                        <th style="text-align:center;color:DodgerBlue;font-weight: normal;">Description</th>
+                         <th style="text-align:center;color:DodgerBlue;font-weight: normal;">Amount</th>
+                        <th style="text-align:center;color:DodgerBlue;font-weight: normal;">Payment Type</th>
+                       <th style="text-align:center;color:DodgerBlue;font-weight: normal;">Status</th>
+                        
+                    </tr>
+                  </thead>
+            <tbody><!-- ngRepeat: x in voucherlist | filter: { cancelled: '1'} -->
+            
+            
+            <tr>
+            <td colspan="5" style="text-align:center; font-weight:bold;color:black;">Total</td>
+            <td style="text-align:right; font-weight:bold" class="ng-binding">0</td>
+            <td>&nbsp;</td>
+            </tr>
+            
+            
+            </tbody></table>
+            
+            </div>
+            </div> 
+            
+            
+            </div>
+            </section>
+    
+      

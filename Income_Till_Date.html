@@ -1,0 +1,60 @@
+<style>
+    @media print{
+        button,.btn,#feeDate,#im{
+          visibility:hidden;
+        }
+      }
+      @page { size: auto;  margin: 0mm; }
+</style>
+
+<div ng-app="library" ng-controller="Income Till Date" ng-init='section=true;nodata=true;amountDets=true;loading=false;'>
+        <!-- header logo: style can be found in header.less -->
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                <h4 class="m-0 text-dark">Income Till Date &nbsp;&nbsp;&nbsp;</h4>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Income Till Date</li>
+                </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <div class="row">
+            <div class="col-md-3 form-group"><input type="date" class="form-control" id="fromdt" name="fromdt" value=""></div>
+            <div class="col-md-3 form-group"><input type="date" name="todt" id="todt" class="form-control" value=""></div>
+            
+            <div class="col-md-3 form-group">
+                                        <select name="fee_id" id="fee_id" class="form-control">
+    <option value="">All</option>
+                
+    <option value="1">TUTION FEE&nbsp;(TF)</option>
+                
+    <option value="2">HOSTEL FEE&nbsp;(HF)</option>
+                
+    <option value="3">Study Material&nbsp;(SM)</option>
+                
+    <option value="4">Uniform&nbsp;(UF)</option>
+                
+    <option value="5">VEHICLE FEE&nbsp;(VF)</option>
+                
+    <option value="6">Other Fee&nbsp;(OF)</option>
+                
+    <option value="7">EXAM FEE&nbsp;(EF)</option>
+                
+    <option value="8">Coaching Fee&nbsp;(COF)</option>
+                                      </select>
+            </div>
+            <div class="col-md-3 form-group"><input type="button" value="Submit" onclick="get_institute_till_date()" class="btn btn-md btn-primary">
+            <a href="javascript:void(0)" download="institutereport.xls" onclick="return ExcellentExport.excel(this, 'institutereport', 'Sheet Name Here');"> <i class="fa fa-file-excel-o fa-lg"></i></a>
+            </div>	
+            </div>
+    
+ 

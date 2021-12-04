@@ -1,0 +1,104 @@
+<style>
+    @media print{
+        button,.btn,#feeDate,#im{
+          visibility:hidden;
+        }
+      }
+      @page { size: auto;  margin: 0mm; }
+</style>
+
+<div ng-app="library" ng-controller="Strength Register" ng-init='section=true;nodata=true;amountDets=true;loading=false;'>
+        <!-- header logo: style can be found in header.less -->
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                <h4 class="m-0 text-dark">Strength Register &nbsp;&nbsp;&nbsp;<i class="fas fa-sync fa-spin" ng-show='loading'></i></h4>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Strength Register</li>
+                </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+        
+        
+        <section class="content">
+            <div class="box box-warning">
+                <div class="box-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <select name="campus_id" id="campus_id" onchange="get_campusid(this)" class="form-control">
+                                    <option value="">Select Campus</option>
+                                    <option value="30">ADC KKD</option>
+                                    <option value="31">AWDC KKD</option>
+                                    <option value="32">ADC RJY</option>
+                                    <option value="33">AWDC RJY</option>
+                                    <option value="34">ADC PKL</option>
+                                    <option value="35">ADC ASL</option>
+                                    <option value="36">ADC GPT</option>
+                                    <option value="37">ADC GWK</option>
+                                    <option value="61">ADC AMP</option>
+                                    <option value="62">ADC TPG</option>
+                                    <option value="63">ADC ELR</option>
+                                    <option value="64">ADC SKLM</option>
+                                    <option value="65">ADC BVM</option>
+                                    <option value="66">AWDC SKLM</option>
+                                    <option value="71">ADC VZM</option>
+                                    <option value="72">ADC ASL-BSCHOOL</option>
+                                    <option value="75">ADC SRPM</option>
+                                    <option value="76">ASCS KKD</option>
+                                    <option value="79">ADC TUN</option>
+                                    <option value="80">AWDC ASL</option>
+                                    <option value="81">AGBS</option>
+                                    <option value="86">AWDC GPT</option>                     
+                                    <option value="91">ADC RJY-ANM</option>                    
+                                    <option value="92">ASMS KKD</option>
+                                    <option value="93">ADC SRPM-BSCHOOL</option>
+                                    <option value="95">SADCBVM</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <select name="sec_id" id="sec_id" class="form-control" required="" onchange="get_sec_id(this)">
+                                    <option value="">-Select Section-</option>
+                                    <option value="222">J-JEE(MAINS)-A1</option>
+                                    <option value="223">J-JEE(MAINS)-A2</option>
+                                    <option value="224">J-JEE(MAINS)-A3</option>
+                                    <option value="225">J-JEE(MAINS)-A4</option>
+                                    <option value="226">JB1</option>
+                                    <option value="227">JB2</option>
+                                    <option value="228">JB3</option>
+                                    <option value="700">J(ADV)-B</option>
+                                    <option value="722">J-JEE(MAINS)-A5</option>
+                                    <option value="1091">JB4</option>
+                                    <option value="1562">J-JEE(MAINS)-A6</option>
+                                    <option value="1565">J(ADV)-G</option>
+                                    <option value="2555">J-JEE(MAINS)-A7</option>
+                                    <option value="3033">JB5</option>
+                                    <option value="3034">JB6</option>
+                             
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="monthly_report">
+                        <div class="row">
+                            <div class="col-md-12" align="center" style="padding-top:50px; font-size:18px">
+                                <div class="table-responsive">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+             
+            
+            </div>
+            </div>
+        </section>

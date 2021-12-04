@@ -1,0 +1,90 @@
+<style>
+    @media print{
+        button,.btn,#feeDate,#im{
+          visibility:hidden;
+        }
+      }
+      @page { size: auto;  margin: 0mm; }
+</style>
+
+<div ng-app="library" ng-controller="Expenditure Report" ng-init='section=true;nodata=true;amountDets=true;loading=false;'>
+        <!-- header logo: style can be found in header.less -->
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                <h4 class="m-0 text-dark">Expenditure Report &nbsp;&nbsp;&nbsp;</h4>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Expenditure Report</li>
+                </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <section class="content">
+            <div class="box-body">
+            
+            <div class="box box-warning">
+            <div class="box-body">
+            <!--<pre ng-bind="data|json"></pre>-->
+                     <div class="row form-group">
+                     <div class="col-md-3">
+              <select name="inst_id" id="inst_id" class="form-control validate[required]" onchange="get_instid(this);">
+                                
+                                <option value="" selected="selected">--Select Institute--</option>
+            
+                                                          <option value="1">SCHOOLS</option>
+                                                          <option value="2">JUNIOR COLLEGE</option>
+                                                          <option value="3">DEGREE COLLEGE</option>
+                                                          <option value="4">COMPETITIVE</option>
+                                                          <option value="5">PG COLLEGE</option>
+                                                          <option value="6">NURSING</option>
+                                                          <option value="7">INTERNATIONAL SCHOOL</option>
+                                                          <option value="8">IIT SCHOOL</option>
+                                                </select>
+             
+            </div>
+                         <div class="pull-left col-md-4">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="daterange-btn" data-ajax="false" value="12/02/2021 - 12/02/2021" name="select_date">
+                                    <span class="input-group-btn">
+                                       <button type="button" class="btn btn-info btn-flat" onclick="get_date()">Submit</button>
+                                    </span>
+                              </div>
+                         </div> 
+                         <div class="col-md-2 text-right">
+                         <a href="#" download="cashier_exp.xls" onclick="return ExcellentExport.excel(this, 'exp_list', 'Sheet Name Here');"> <i class="fa fa-file-excel-o fa-2x"></i></a>&nbsp; <a href="#" onclick="printTable('exp_list'); return false;"><i class="fa fa-print  fa-2x"></i></a> 
+                         </div>
+                         <div style="clear:both"></div>
+                     </div>
+            
+            
+            <div class="form-group" style="overflow-x:scroll" id="exp_list">
+             <table class="table table-bordered" border="1" style="margin-top:5px;" width="100%" cellpadding="3" cellspacing="0">
+            <thead>
+            <tr class="info">
+            <th>CAMPUS</th>
+            <th>TOTAL</th>
+            </tr>
+            </thead>
+            
+            
+            
+            
+            </table>
+            </div>
+            
+            
+            </div>
+            </div> 
+            
+            
+            </div>
+            </section>
+    

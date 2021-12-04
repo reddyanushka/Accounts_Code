@@ -1,0 +1,483 @@
+<style>
+    @media print{
+        button,.btn,#feeDate,#im{
+          visibility:hidden;
+        }
+      }
+      @page { size: auto;  margin: 0mm; }
+</style>
+
+<div ng-app="library" ng-controller="Cashier Wise" ng-init='section=true;nodata=true;amountDets=true;loading=false;'>
+        <!-- header logo: style can be found in header.less -->
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                <h4 class="m-0 text-dark">Cashier Wise &nbsp;&nbsp;&nbsp;</h4>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Cashier Wise</li>
+                </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <section class="content">
+            <div class="box box-primary">				
+            <div class="box-body">
+                                    
+                                            <div class="row">
+                                            
+             
+            <div class="col-md-4 form-group">	
+             <select name="year_id" id="year_id" onchange="get_cashier_id(this)" class="form-control">
+                  <option selected="selected" value="Select Cashier">Select Cashier</option>
+            
+                                                                                       
+                                    <option value="5">
+                                    P.SRAVANA KUMAR</option>
+                                                            
+                                    <option value="6">
+                                    B.VENKATA RAMIREDDY</option>
+                                                            
+                                    <option value="8">
+                                    G.PRASAD</option>
+                                                            
+                                    <option value="11">
+                                    TIKKA PRASAD</option>
+                                                            
+                                    <option value="15">
+                                    A.RAMBABU</option>
+                                                            
+                                    <option value="17">
+                                    V.SRINIVAS RAO</option>
+                                                            
+                                    <option value="18">
+                                    A.LAVANYA</option>
+                                                            
+                                    <option value="21">
+                                    P.RAMAKRISHNA</option>
+                                                            
+                                    <option value="24">
+                                    S.RAVINDRA KUMAR</option>
+                                                            
+                                    <option value="27">
+                                    P.SOMAREDDY</option>
+                                                            
+                                    <option value="30">
+                                    P.SRINIVAS</option>
+                                                            
+                                    <option value="34">
+                                    C.S.R.KUMARI</option>
+                                                            
+                                    <option value="35">
+                                    K.SOLOMON RAJU</option>
+                                                            
+                                    <option value="37">
+                                    Y.SATYANARAYANA</option>
+                                                            
+                                    <option value="41">
+                                    JC</option>
+                                                            
+                                    <option value="61">
+                                    M.JAYASREE</option>
+                                                            
+                                    <option value="64">
+                                    G.PADMAVATHI</option>
+                                                            
+                                    <option value="70">
+                                    CH PRATHAP REDDY</option>
+                                                            
+                                    <option value="74">
+                                    P.PADMA</option>
+                                                            
+                                    <option value="78">
+                                    U.K.DURGA(SPKL)</option>
+                                                            
+                                    <option value="84">
+                                    GVLAKSHMI</option>
+                                                            
+                                    <option value="85">
+                                    DANNINA RAJU</option>
+                                                            
+                                    <option value="86">
+                                    A.D.V.S.N.REDDY</option>
+                                                            
+                                    <option value="87">
+                                    rambabu</option>
+                                                            
+                                    <option value="88">
+                                    P.Nagi Reddy</option>
+                                                            
+                                    <option value="89">
+                                    P.R.K.REDDY</option>
+                                                            
+                                    <option value="90">
+                                    ammireddy</option>
+                                                            
+                                    <option value="123">
+                                    B.V.GANAPATHI</option>
+                                                            
+                                    <option value="128">
+                                    B.Ramya Devi</option>
+                                                            
+                                    <option value="160">
+                                    T.GANGADHAR(CBSE)</option>
+                                                            
+                                    <option value="170">
+                                    N.ANIL KUMAR</option>
+                                                            
+                                    <option value="172">
+                                    P.Vani Reddy</option>
+                                                            
+                                    <option value="173">
+                                    ISD.PRABHAVATHI(DSC)</option>
+                                                            
+                                    <option value="189">
+                                    I.prasad rao(BED)</option>
+                                                            
+                                    <option value="194">
+                                    K.ARUNA KUMARI(AWDC)</option>
+                                                            
+                                    <option value="195">
+                                    KSRAJAREDDY(PGKKD)</option>
+                                                            
+                                    <option value="196">
+                                    JCPKL</option>
+                                                            
+                                    <option value="198">
+                                    P.SATYANARAYANA REDDY(CBSE)</option>
+                                                            
+                                    <option value="199">
+                                    n.ramakrishna</option>
+                                                            
+                                    <option value="211">
+                                    MLNREDDY</option>
+                                                            
+                                    <option value="215">
+                                    A.S.JAGADEESH</option>
+                                                            
+                                    <option value="220">
+                                    satyakala.ch</option>
+                                                            
+                                    <option value="221">
+                                    Ch.Sita ramudu</option>
+                                                            
+                                    <option value="227">
+                                    G PRASAD</option>
+                                                            
+                                    <option value="228">
+                                    N ANIL KUMAR</option>
+                                                            
+                                    <option value="229">
+                                    K.SOLOMON RAJU</option>
+                                                            
+                                    <option value="230">
+                                    I PRASAD RAO</option>
+                                                            
+                                    <option value="231">
+                                    M L N Reddy</option>
+                                                            
+                                    <option value="233">
+                                    K.SATYANARAYANA</option>
+                                                            
+                                    <option value="238">
+                                    sitaramsurubhotla</option>
+                                                            
+                                    <option value="251">
+                                    CH.CHELLAREDDY</option>
+                                                            
+                                    <option value="259">
+                                    PVSURYANARAYANA</option>
+                                                            
+                                    <option value="268">
+                                    KUMAR.AVSP</option>
+                                                            
+                                    <option value="269">
+                                    S.Jyothi Patnaik(adcasl-bschool)</option>
+                                                            
+                                    <option value="270">
+                                    N S VISWESWARA RAO</option>
+                                                            
+                                    <option value="272">
+                                    BAKI RAMESH REDDY</option>
+                                                            
+                                    <option value="273">
+                                    S.SURESHREDDY</option>
+                                                            
+                                    <option value="274">
+                                    BSSARMA</option>
+                                                            
+                                    <option value="283">
+                                    CHVSRLREDDY</option>
+                                                            
+                                    <option value="284">
+                                    G.SATYANARAYANA</option>
+                                                            
+                                    <option value="291">
+                                    Anisetti sanjeevi</option>
+                                                            
+                                    <option value="292">
+                                    SATHI BABU SEELAM</option>
+                                                            
+                                    <option value="294">
+                                    vijay</option>
+                                                            
+                                    <option value="298">
+                                    KPRAKASH</option>
+                                                            
+                                    <option value="300">
+                                    KADA ARUNA REKHA</option>
+                                                            
+                                    <option value="312">
+                                    KSNMURTHY(ADCGPT)</option>
+                                                            
+                                    <option value="313">
+                                    Chaitanya Swaroop P</option>
+                                                            
+                                    <option value="314">
+                                    Meka Saibaba</option>
+                                                            
+                                    <option value="318">
+                                    ADCGPTCASH</option>
+                                                            
+                                    <option value="326">
+                                    A SUDHAKARA REDDY</option>
+                                                            
+                                    <option value="329">
+                                    GV LAKHSMI</option>
+                                                            
+                                    <option value="332">
+                                    ADCTPGOPERATOR</option>
+                                                            
+                                    <option value="333">
+                                    sunil</option>
+                                                            
+                                    <option value="337">
+                                    A.SUDHAKARREDDY</option>
+                                                            
+                                    <option value="338">
+                                    P.UMA LAKSHMI</option>
+                                                            
+                                    <option value="345">
+                                    P. Suresh Reddy</option>
+                                                            
+                                    <option value="346">
+                                    M Vijaya Lakshmi</option>
+                                                            
+                                    <option value="347">
+                                     P Nagamani</option>
+                                                            
+                                    <option value="351">
+                                    R REVATHI</option>
+                                                            
+                                    <option value="352">
+                                    pprasad</option>
+                                                            
+                                    <option value="372">
+                                    RAMA.P</option>
+                                                            
+                                    <option value="373">
+                                    A.SUBBIREDDY</option>
+                                                            
+                                    <option value="375">
+                                    Ch Umamaheswarreddy</option>
+                                                            
+                                    <option value="377">
+                                    nvijayalakshmi</option>
+                                                            
+                                    <option value="379">
+                                    SANAPALA VENKATA RAMANA</option>
+                                                            
+                                    <option value="381">
+                                    gowthamigrace</option>
+                                                            
+                                    <option value="382">
+                                    KVVRAMANA</option>
+                                                            
+                                    <option value="383">
+                                    k.sandeepreddy</option>
+                                                            
+                                    <option value="386">
+                                    ssrikanth</option>
+                                                            
+                                    <option value="398">
+                                    Lakshyacashier</option>
+                                                            
+                                    <option value="404">
+                                    ESRINIVAS</option>
+                                                            
+                                    <option value="408">
+                                    K.UMA MAHESH REDDY</option>
+                                                            
+                                    <option value="412">
+                                    GUTTULA NAGA LAKSHMI</option>
+                                                            
+                                    <option value="414">
+                                    Brajesh</option>
+                                                            
+                                    <option value="424">
+                                    S Tagore</option>
+                                                            
+                                    <option value="425">
+                                    R VARA LAKSHMI</option>
+                                                            
+                                    <option value="427">
+                                    School Operator</option>
+                                                            
+                                    <option value="430">
+                                    Durga Devi</option>
+                                                            
+                                    <option value="431">
+                                    Chshankar</option>
+                                                            
+                                    <option value="438">
+                                    P.vanitha</option>
+                                                            
+                                    <option value="441">
+                                    APPAREDDY A</option>
+                                                            
+                                    <option value="442">
+                                    VSVV SATYANARAYANA</option>
+                                                            
+                                    <option value="447">
+                                    apspklcashier</option>
+                                                            
+                                    <option value="448">
+                                    vkesavarao</option>
+                                                            
+                                    <option value="449">
+                                    ajcsklmcashier</option>
+                                                            
+                                    <option value="451">
+                                    CH.RAMESH</option>
+                                                            
+                                    <option value="454">
+                                    Mettu Durga Srinivas Raj</option>
+                                                            
+                                    <option value="461">
+                                    K NAGAMANI</option>
+                                                            
+                                    <option value="464">
+                                    DSCCASHIER</option>
+                                                            
+                                    <option value="466">
+                                    AWDCRJYCASHIER</option>
+                                                            
+                                    <option value="467">
+                                    ADCKKD CASHIER</option>
+                                                            
+                                    <option value="468">
+                                    V.TANUJAA</option>
+                                                            
+                                    <option value="469">
+                                    BAGATHI APPARAO</option>
+                                                            
+                                    <option value="471">
+                                    SANAPALA SRIKANTH</option>
+                                                            
+                                    <option value="479">
+                                    schoolreports</option>
+                                                            
+                                    <option value="481">
+                                    A.SATYA SWAROOP REDDY</option>
+                                                            
+                                    <option value="505">
+                                    CH.TATAMMAREDDY</option>
+                                                            
+                                    <option value="510">
+                                    B.SRINIVASARARAO</option>
+                                                            
+                                    <option value="511">
+                                    K V SASIKALA</option>
+                                                            
+                                    <option value="514">
+                                    TVDPRASAD</option>
+                                                            
+                                    <option value="515">
+                                    awdckkdcashier</option>
+                                                            
+                                    <option value="517">
+                                    ADCBVM CASHIER</option>
+                                                                                      </select>       
+            </div>
+            
+            
+            <div class="col-md-2 form-group">	
+             <select name="year_id" id="year_id" onchange="get_year(this)" class="form-control">
+                  <option selected="selected" value="Select Year">Select Year</option>
+            
+                                                                                       
+                                    <option value="2" selected="selected">
+                                    2014-2015</option>
+                                                            
+                                    <option value="5">
+                                    2015-2016</option>
+                                                            
+                                    <option value="7">
+                                    2016-2017</option>
+                                                            
+                                    <option value="8">
+                                    2017-2018</option>
+                                                            
+                                    <option value="10">
+                                    2018-2019</option>
+                                                            
+                                    <option value="13">
+                                    2019-2020</option>
+                                                            
+                                    <option value="15">
+                                    2020-2021</option>
+                                                            
+                                    <option value="16">
+                                    2021-2022</option>
+                                                                                      </select>       
+            </div>
+            
+            <div class="col-md-2 form-group">			
+                 
+             
+             <select name="date" id="date" class="form-control" onchange="getdate(this);">
+              <option value="Select ">Select </option>
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+                          </select>         
+            </div>
+            
+            <div class="col-md-2 form-group">	
+                                                    
+                    <a href="#" download="monthly_dcr.xls" onclick="return ExcellentExport.excel(this, 'monthly_report', 'Sheet Name Here');" data-toggle="tooltip" title="" data-original-title="Excel">
+                    <i class="fa fa-file-excel-o fa-2x"></i></a>&nbsp;&nbsp;&nbsp;
+                     <a href="#" target="_blank" onclick="printTable('monthly_report'); return false;" data-toggle="tooltip" title="" data-original-title="Print"><i class="fa fa-print fa-2x"></i></a>
+               
+            </div>
+            
+            
+             </div>
+               
+                
+            </div>
+            </div>
+             
+            
+            
+             
+                            
+                            <!-- /.content -->
+                        </section>
+    

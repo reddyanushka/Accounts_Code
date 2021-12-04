@@ -1,0 +1,326 @@
+<style>
+    @media print{
+        button,.btn,#feeDate,#im{
+          visibility:hidden;
+        }
+      }
+      @page { size: auto;  margin: 0mm; }
+</style>
+
+<div ng-app="library" ng-controller="Stock Report" ng-init='section=true;nodata=true;amountDets=true;loading=false;'>
+        <!-- header logo: style can be found in header.less -->
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                <h4 class="m-0 text-dark">Stock Report &nbsp;&nbsp;&nbsp;</h4>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Stock Report</li>
+                </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <section class="content">
+            <div class="box box-primary">				
+            <div class="box-body">
+                                    
+                                            <div class="row">
+                                            
+             <div class="col-md-4 form-group">	
+             <select name="school_id" id="school_id" class="form-control" onchange="get_society_id(this);">
+                 <option selected="selected" value="">Society</option>
+                                                                    
+                                                                  <option value="1">
+                                    VIVEKANANDA EDUCATIONAL WELFARE SOCIETY [ Regd No:</option>
+                                                            <option value="2">
+                                    ADITYA ACADEMY [ Regd No:167/84 ]</option>
+                                                            <option value="3">
+                                    NARAYANA EDUCATIONAL SOCIETY [ Regd No:162/1997]</option>
+                                                            <option value="4">
+                                    SAROJINI EDUCATIONAL SOCIETY [Regd No:1179/1992]</option>
+                                                            <option value="5">
+                                    ACCE(Pro:smt.Lakshmi Rajyam)</option>
+                                                            <option value="6">
+                                    ADITYA COLLLEGE OF COMPETITIVE EXAMINATIONS[Pro:Nallamilli Satish Reddy]</option>
+                                                            <option value="7">
+                                    ACCE(Pro:Mr.N.Deepak Reddy)</option>
+                                                            <option value="8">
+                                    ENGINEERS ACADEMY</option>
+                                                            <option value="9">
+                                    ADITYA COLLLEGE OF COMPETITIVE EXAMINATIONS[Pro:Nallamilli Sruthi]</option>
+                                                            <option value="10">
+                                    SRI LAKSHMI ADITYA STUDENT HOSTEL</option>
+                                                            <option value="11">
+                                    ACCE[Pro:Nallamilli Suguna]</option>
+                                                            <option value="12">
+                                    AMALAPURAM</option>
+                                                            <option value="13">
+                                    SRIKAKULAM</option>
+                                                            <option value="14">
+                                    ELURU</option>
+                                                            <option value="15">
+                                    BHIMAVARAM</option>
+                                                            <option value="16">
+                                    TADEPALLIGUDEM</option>
+                                                            <option value="17">
+                                    DIVIJA EDUCATIONAL SOCIETY</option>
+                                                            <option value="18">
+                                    SRI SUDHAKAR EDUCATIONAL SOCIETY</option>
+                                                            <option value="19">
+                                    VIZIANAGARAM</option>
+                                                            <option value="20">
+                                    ADITYA EDUCATIONAL INSTITUTIONS</option>
+                                                            <option value="21">
+                                    ADITYA COLLEGE OF COMPETITIVE EXAMS</option>
+                                                            <option value="22">
+                                    SRI LAKSHMI ADITYA PUBLICATIONS</option>
+                                     </select>   
+             </div>
+            <div class="col-md-4 form-group">	
+             <select name="school_id" id="school_id" class="form-control" onchange="get_school_id(this);">
+                 <option selected="selected" value="">ALL CAMPUS</option>
+                                                                    
+                                                        <option value="1">
+                                    ADITYA JUNIOR COLLEGE(AJCKKD)-KAKINADA</option>
+                                                            <option value="2">
+                                    SRI SAI ADITYA JUNIOR COLLEGE(SAJCKKD)-KAKINADA</option>
+                                                            <option value="3">
+                                    ADITYA SCHOOL(APSKKD)-KAKINADA</option>
+                                                            <option value="4">
+                                    ADITYA JUNIOR COLLEGE(AJCAMP)-AMALAPURAM</option>
+                                                            <option value="5">
+                                    ADITYA JUNIOR COLLEGE(AJCPKL)-PALAKOLLU</option>
+                                                            <option value="6">
+                                    ADITYA JUNIOR COLLEGE(AJCNSP)-NARASAPURAM</option>
+                                                            <option value="7">
+                                    ADITYA JUNIOR COLLEGE(AJCBVM)-BHIMAVARAM</option>
+                                                            <option value="8">
+                                    SRI SAI ADITYA JUNIOR COLLEGE(SAJCBVM)-BHIMAVARAM</option>
+                                                            <option value="9">
+                                    ADITYA JUNIOR COLLEGE(AJCTPG)-TADEPALLIGUDEM   08818-227575,226464</option>
+                                                            <option value="10">
+                                    ADITYA JUNIOR COLLEGE(AJCMDP)-MANDAPETA</option>
+                                                            <option value="11">
+                                    ADITYA JUNIOR COLLEGE(AJCRJY)-RAJAMAHENDRAVARAM</option>
+                                                            <option value="13">
+                                    ADITYA SCHOOL(APSJKP)-KAKINADA(JKP)</option>
+                                                            <option value="14">
+                                    ADITYA SCHOOL(APSAMP)-AMALAPURAM</option>
+                                                            <option value="15">
+                                    ADITYA SCHOOL(APSPKL)-PALAKOLLU</option>
+                                                            <option value="16">
+                                    ADITYA SCHOOL(APSNSP)-NARASAPURAM</option>
+                                                            <option value="17">
+                                    ADITYA SCHOOL(APSPTP)-PITHAPURAM</option>
+                                                            <option value="18">
+                                    ADITYA SCHOOL(APSGMD)-G MAMIDADA</option>
+                                                            <option value="19">
+                                    ADITYA DEGREE COLLEGE(ADCKKD)-KAKINADA</option>
+                                                            <option value="20">
+                                    ADITYA DEGREE COLLEGE for WOMEN(AWDCKKD)-KAKINADA</option>
+                                                            <option value="21">
+                                    ADITYA DEGREE COLLEGE(ADCRJY)-RAJAMAHENDRAVARAM</option>
+                                                            <option value="22">
+                                    ADITYA DEGREE COLLEGE for WOMEN(AWDCRJY)-RAJAMAHENDRAVARAM</option>
+                                                            <option value="23">
+                                    ADITYA DEGREE COLLEGE(ADCPKL)-PALAKOLLU</option>
+                                                            <option value="24">
+                                    ADITYA DEGREE COLLEGE(ADCASL)-VISAKHAPATNAM</option>
+                                                            <option value="25">
+                                    ADITYA DEGREE COLLEGE(ADCGPT)-VISAKHAPATNAM</option>
+                                                            <option value="26">
+                                    ADITYA DEGREE COLLEGE (ADCGWK)-GAJUWAKA</option>
+                                                            <option value="27">
+                                    ADITYA COLLEGE OF COMPETITIVE EXAMINATIONS(ACCE(POLYTECH))-KAKINADA</option>
+                                                            <option value="28">
+                                    ADITYA ACADEMY(AA)-KAKINADA</option>
+                                                            <option value="29">
+                                    Aditya Institute of PG Studies(AIPGS)-KAKINADA</option>
+                                                            <option value="30">
+                                    Aditya Engineering College(AEC)-KAKINADA</option>
+                                                            <option value="31">
+                                    Aditya College of Engineering &amp; Technology(ACET)-KAKINADA</option>
+                                                            <option value="32">
+                                    ADITYA COLLEGE OF ENGINEERING(ACES)-KAKINADA</option>
+                                                            <option value="33">
+                                    Aditya Degree College(PG Courses)(ADPG)-KAKINADA</option>
+                                                            <option value="34">
+                                    Aditya Degree College(PG Courses)For Women(ADPGW)-KAKINADA</option>
+                                                            <option value="35">
+                                    ADITYA COLLEGE OF NURSING(ACN)-KAKINADA</option>
+                                                            <option value="36">
+                                    ADITYA SCHOOL OF NURSING(ASN)-KAKINADA</option>
+                                                            <option value="37">
+                                    FLORENCE NIGHTINGALE SCHOOL OF NURSING(FNSN)-KAKINADA</option>
+                                                            <option value="38">
+                                    ADITYA DEGREE COLLEGES PG STUDIES(ADCPGS)-VISHAKAPATNAM(GPT)</option>
+                                                            <option value="39">
+                                    ADITYA COLLEGE OF COMPETITIVE EXAMINATIONS(ACCE(DSC))-KAKINADA</option>
+                                                            <option value="40">
+                                    ADITYA COLLEGE OF COMPETITIVE EXAMINATIONS(ACCE)-KAKINADA</option>
+                                                            <option value="41">
+                                    ADITYA COLLEGE OF EDUCATION(ABED)-KAKINADA</option>
+                                                            <option value="42">
+                                    ADITYA TELUGU PANDIT TRAINING COLLEGE(ATPT)-KAKINADA</option>
+                                                            <option value="43">
+                                    SRI SAI ADITYA TELUGU PANDIT TRAINING COLLEGE(STPT)-KAKINADA</option>
+                                                            <option value="44">
+                                    ADITYA HINDI PANDIT TRAINING COLLEGE(AHPT)-KAKINADA</option>
+                                                            <option value="45">
+                                    SRI SAI ADITYA HINDI PANDIT TRAINING COLLEGE(SHPT)-KAKINADA</option>
+                                                            <option value="46">
+                                    ENGINEERS ACADEMY (ENGAA)-KAKINADA</option>
+                                                            <option value="48">
+                                    LAKSHYA SCHOOL(LAKSHYA SCHOOL)-E.G.Dist</option>
+                                                            <option value="49">
+                                    ADITYA SCHOOL(ADITYA SCHOOL)-IIT-AMALAPURAM</option>
+                                                            <option value="50">
+                                    ADITYA HIGH SCHOOL (E.M)(APSGRG)-KAKINADA</option>
+                                                            <option value="51">
+                                    ADITYA COLLEGE OF DIPLOMA IN ELEMENTARY EDUCATION(D.Ed)(AD.Ed)-KAKINADA</option>
+                                                            <option value="52">
+                                    ADITYA COLLEGE OF DIPLOMA IN ELEMENTARY EDUCATION FOR WOMEN(AD.EdW)-KAKINADA</option>
+                                                            <option value="53">
+                                    ADITYA DEGREE COLLEGE(ADCAMP)-AMALAPURAM</option>
+                                                            <option value="54">
+                                    ADITYA DEGREE COLLEGE(ADCBVM)-BHIMAVARAM</option>
+                                                            <option value="55">
+                                    ADITYA DEGREE COLLEGE(ADCTPG)-TADEPALLIGUDEM</option>
+                                                            <option value="56">
+                                    ADITYA DEGREE COLLEGE(ADCELR)-ELURU</option>
+                                                            <option value="57">
+                                    ADITYA DEGREE COLLEGE(ADCSKLM)-SRIKAKULAM</option>
+                                                            <option value="58">
+                                    KAKINADA ADITYA DEGREE COLLEGE(AWDCSKLM)-SRIKAKULAM</option>
+                                                            <option value="59">
+                                    Aditya College of Media Sciences(ACMS)-KAKINADA</option>
+                                                            <option value="60">
+                                    ADITYA JUNIOR COLLEGE(AJCSKLM)-SRIKAKULAM</option>
+                                                            <option value="61">
+                                    ADITYA JUNIOR COLLEGE(AJCELR)-ELURU</option>
+                                                            <option value="62">
+                                    ADITYA DEGREE COLLEGE(ADCVZM)-Vizianagaram</option>
+                                                            <option value="64">
+                                    ADITYA ACADEMY(ACCE(RJY))-RAJAMAHENDRAVARAM</option>
+                                                            <option value="65">
+                                    ADITYA DEGREE COLLEGE(ADCSRPM)-SURAMPALEM</option>
+                                                            <option value="66">
+                                    ADITYA COLLEGE OF COMPETITIVE EXAMS(ACCE(DSC-2018))-KAKINADA</option>
+                                                            <option value="67">
+                                    ADITYA SCHOOL(APSTPG)-TADEPALLIGUDEM</option>
+                                                            <option value="68">
+                                    ADITYA DEGREE COLLEGE(ADCTUN)-TUNI</option>
+                                                            <option value="69">
+                                    ADITYA GLOBAL BUSINESS SCHOOL(AGBS)-SURAMPALEM</option>
+                                                            <option value="70">
+                                    ADITYA POLYTENIC COACHING(ACEEP)-KAKINADA</option>
+                                                            <option value="71">
+                                    ADITYA SCHOOL(AIITSPKL)-PALAKOLLU</option>
+                                                            <option value="73">
+                                    ADITYA COLLEGE OF COMPETITIVE EXAMS(ACCES)-KANINADA</option>
+                                                            <option value="74">
+                                    ADITYA POLICE ACADEMY(APA)-KAKINADA</option>
+                                                            <option value="75">
+                                    ADITYA JUNIOR COLLEGE(AJCVSP)-VISAKHAPATNAM</option>
+                                                            <option value="76">
+                                    SRI SAI ADITYA JUNIOR COLLEGE(SSAJCRJY)-RAJAMAHENDRAVARAM</option>
+                                                            <option value="77">
+                                    SRI ADITYA DEGREE COLLEGE(SADCBVM)-BHIMAVARAM</option>
+                                     </select>   
+             </div>
+                  
+            
+            
+            
+            <div class="col-md-2 form-group">	
+             <select name="year_id" id="year_id" onchange="get_year(this)" class="form-control">
+                  <option selected="selected" value="Select Year">Select Year</option>
+            
+                                                                                       
+                                    <option value="2">
+                                    2014-2015</option>
+                                                            
+                                    <option value="5">
+                                    2015-2016</option>
+                                                            
+                                    <option value="7">
+                                    2016-2017</option>
+                                                            
+                                    <option value="8">
+                                    2017-2018</option>
+                                                            
+                                    <option value="10">
+                                    2018-2019</option>
+                                                            
+                                    <option value="13">
+                                    2019-2020</option>
+                                                            
+                                    <option value="15">
+                                    2020-2021</option>
+                                                            
+                                    <option value="16">
+                                    2021-2022</option>
+                                                                                      </select>       
+            </div>
+            
+            <div class="col-md-2 form-group">			
+                 
+             
+             <select name="date" id="date" class="form-control" onchange="getdate(this);">
+              <option value="Select ">Select </option>
+            
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+            
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+                          </select>         
+            </div>
+            
+            <div class="col-md-1 form-group">	
+                                                    
+                    <a href="#" download="monthly_dcr.xls" onclick="return ExcellentExport.excel(this, 'monthly_report', 'Sheet Name Here');">
+                    <i class="fa fa-file-excel-o fa-2x"></i></a>&nbsp;&nbsp;
+                     <a href="#" target="_blank" onclick="printTable('monthly_report'); return false;" data-toggle="tooltip" title="" data-original-title="Print"><i class="fa fa-print fa-2x"></i></a>
+               
+            </div>
+             </div>
+             <div class="row">
+            <div class="col-md-3 form-group">
+            <select name="payment_id" id="payment_id" class="form-control" onchange="get_payment_id(this);">
+                 <option value="">Select Payment Type</option>
+                <option value="1">Cash</option>
+                <option value="5">Swipe</option>
+                <option value="2">Cheque</option>
+                <option value="3">DD</option>
+                <option value="4">Online</option>
+             </select>
+            </div>
+            </div>
+               
+                
+            </div>
+            </div>
+             
+            
+            
+             
+                            
+                            <!-- /.content -->
+                        </section>
+    

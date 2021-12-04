@@ -1,0 +1,233 @@
+<style>
+    @media print{
+        button,.btn,#feeDate,#im{
+          visibility:hidden;
+        }
+      }
+      @page { size: auto;  margin: 0mm; }
+</style>
+
+<div ng-app="library" ng-controller="Society Wise" ng-init='section=true;nodata=true;amountDets=true;loading=false;'>
+        <!-- header logo: style can be found in header.less -->
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                <h4 class="m-0 text-dark">Society Wise &nbsp;&nbsp;&nbsp;</h4>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Society Wise</li>
+                </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <section class="content">
+            <div class="box box-primary">				
+            <div class="box-body">
+            
+                    <div class="row">
+                                         
+                                <div class="col-md-5 form-group">
+            
+                      
+            <select name="society_id" id="society_id" class="form-control" onchange="get_society_id(this);">
+                 <option selected="selected" value="--NONE--">--NONE--</option>
+                                                                    
+                                                                        <option value="1">
+                                    VIVEKANANDA EDUCATIONAL WELFARE SOCIETY [ Regd No:</option>
+                                                            <option value="2">
+                                    ADITYA ACADEMY [ Regd No:167/84 ]</option>
+                                                            <option value="3">
+                                    NARAYANA EDUCATIONAL SOCIETY [ Regd No:162/1997]</option>
+                                                            <option value="4">
+                                    SAROJINI EDUCATIONAL SOCIETY [Regd No:1179/1992]</option>
+                                                            <option value="5">
+                                    ACCE(Pro:smt.Lakshmi Rajyam)</option>
+                                                            <option value="6">
+                                    ADITYA COLLLEGE OF COMPETITIVE EXAMINATIONS[Pro:Nallamilli Satish Reddy]</option>
+                                                            <option value="7">
+                                    ACCE(Pro:Mr.N.Deepak Reddy)</option>
+                                                            <option value="8">
+                                    ENGINEERS ACADEMY</option>
+                                                            <option value="9">
+                                    ADITYA COLLLEGE OF COMPETITIVE EXAMINATIONS[Pro:Nallamilli Sruthi]</option>
+                                                            <option value="10">
+                                    SRI LAKSHMI ADITYA STUDENT HOSTEL</option>
+                                                            <option value="11">
+                                    ACCE[Pro:Nallamilli Suguna]</option>
+                                                            <option value="12">
+                                    AMALAPURAM</option>
+                                                            <option value="13">
+                                    SRIKAKULAM</option>
+                                                            <option value="14">
+                                    ELURU</option>
+                                                            <option value="15">
+                                    BHIMAVARAM</option>
+                                                            <option value="16">
+                                    TADEPALLIGUDEM</option>
+                                                            <option value="17">
+                                    DIVIJA EDUCATIONAL SOCIETY</option>
+                                                            <option value="18">
+                                    SRI SUDHAKAR EDUCATIONAL SOCIETY</option>
+                                                            <option value="19">
+                                    VIZIANAGARAM</option>
+                                                            <option value="20">
+                                    ADITYA EDUCATIONAL INSTITUTIONS</option>
+                                                            <option value="21">
+                                    ADITYA COLLEGE OF COMPETITIVE EXAMS</option>
+                                                            <option value="22">
+                                    SRI LAKSHMI ADITYA PUBLICATIONS</option>
+                                                  </select>
+            </div>
+                                     
+            </div>
+            <div style="clear:both"></div>	
+             <div id="datatable">
+                
+            <div class="row" id="dcr"> 
+            <div class="col-md-12">
+             
+            
+            
+                    
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                                 
+                   
+            
+                 
+                             
+                    
+                    </div>
+                                
+            
+            
+            
+                    
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                                 
+                   
+            
+                 
+                             
+                    
+                    </div>
+                                
+            </div>
+            </div>
+            </div>
+            </section>
+    

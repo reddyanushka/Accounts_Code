@@ -1,0 +1,472 @@
+<style>
+    @media print{
+        button,.btn,#feeDate,#im{
+          visibility:hidden;
+        }
+      }
+      @page { size: auto;  margin: 0mm; }
+</style>
+
+<div ng-app="library" ng-controller="Cashier" ng-init='section=true;nodata=true;amountDets=true;loading=false;'>
+        <!-- header logo: style can be found in header.less -->
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                <h4 class="m-0 text-dark">Cashier Wise DCR <small></small>&nbsp;&nbsp;&nbsp;<i class="fas fa-sync fa-spin" ng-show='loading'></i></h4>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+                    <li class="breadcrumb-item active">Cashier DCR</li>
+                </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+    
+        <!-- Main content -->
+        
+        <section class="content">
+            <div class="container-fluid">
+                <section class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 form-group">			
+			  	
+                                <select name="cashier_id" id="cashier_id" class="form-control col-md-6" onclick="getcashier_id(this);">
+                                     <option value="0" selected="selected">--NONE--</option>
+                                                                                        
+                                                                                            <option value="347">
+                                                         P Nagamani - ADC GPT</option>
+                                                                                <option value="326">
+                                                        A SUDHAKARA REDDY - ADC TUN</option>
+                                                                                <option value="86">
+                                                        A.D.V.S.N.REDDY - AWDC RJY</option>
+                                                                                <option value="18">
+                                                        A.LAVANYA - AJCBVM</option>
+                                                                                <option value="15">
+                                                        A.RAMBABU - AJCPKL</option>
+                                                                                <option value="215">
+                                                        A.S.JAGADEESH - AIITSAMP-PRIMARY</option>
+                                                                                <option value="481">
+                                                        A.SATYA SWAROOP REDDY - AJCSKLM</option>
+                                                                                <option value="373">
+                                                        A.SUBBIREDDY - ADC KKD</option>
+                                                                                <option value="337">
+                                                        A.SUDHAKARREDDY - ADC TUN</option>
+                                                                                <option value="517">
+                                                        ADCBVM CASHIER - ADC BVM</option>
+                                                                                <option value="318">
+                                                        ADCGPTCASH - ADC GPT</option>
+                                                                                <option value="467">
+                                                        ADCKKD CASHIER - ADC KKD</option>
+                                                                                <option value="332">
+                                                        ADCTPGOPERATOR - ADC TPG</option>
+                                                                                <option value="449">
+                                                        ajcsklmcashier - AJCSKLM</option>
+                                                                                <option value="90">
+                                                        ammireddy - ADC GWK</option>
+                                                                                <option value="291">
+                                                        Anisetti sanjeevi - AJCELR</option>
+                                                                                <option value="441">
+                                                        APPAREDDY A - APSJKP</option>
+                                                                                <option value="447">
+                                                        apspklcashier - APSPKL</option>
+                                                                                <option value="515">
+                                                        awdckkdcashier - AWDC KKD</option>
+                                                                                <option value="466">
+                                                        AWDCRJYCASHIER - AWDC RJY</option>
+                                                                                <option value="128">
+                                                        B.Ramya Devi - AWDC RJY</option>
+                                                                                <option value="510">
+                                                        B.SRINIVASARARAO - ADC GWK</option>
+                                                                                <option value="123">
+                                                        B.V.GANAPATHI - ADC VZM</option>
+                                                                                <option value="6">
+                                                        B.VENKATA RAMIREDDY - AJCKKDMC</option>
+                                                                                <option value="469">
+                                                        BAGATHI APPARAO - ADC BVM</option>
+                                                                                <option value="272">
+                                                        BAKI RAMESH REDDY - AJCELR</option>
+                                                                                <option value="414">
+                                                        Brajesh - APSGMD</option>
+                                                                                <option value="274">
+                                                        BSSARMA - AJCTPG</option>
+                                                                                <option value="34">
+                                                        C.S.R.KUMARI - ADC KKD</option>
+                                                                                <option value="70">
+                                                        CH PRATHAP REDDY - APSPTP</option>
+                                                                                <option value="375">
+                                                        Ch Umamaheswarreddy - ADC GPT</option>
+                                                                                <option value="251">
+                                                        CH.CHELLAREDDY - AJCSKLM</option>
+                                                                                <option value="451">
+                                                        CH.RAMESH - APSSRI</option>
+                                                                                <option value="221">
+                                                        Ch.Sita ramudu - ADC ASL</option>
+                                                                                <option value="505">
+                                                        CH.TATAMMAREDDY - APSJKP</option>
+                                                                                <option value="313">
+                                                        Chaitanya Swaroop P - AWDC SKLM</option>
+                                                                                <option value="431">
+                                                        Chshankar - ADC ASL</option>
+                                                                                <option value="283">
+                                                        CHVSRLREDDY - ANC(NURSING)</option>
+                                                                                <option value="85">
+                                                        DANNINA RAJU - ADC RJY</option>
+                                                                                <option value="464">
+                                                        DSCCASHIER - ACCES</option>
+                                                                                <option value="430">
+                                                        Durga Devi - AWDC KKD</option>
+                                                                                <option value="404">
+                                                        ESRINIVAS - AJCTPG</option>
+                                                                                <option value="227">
+                                                        G PRASAD - AIITJ</option>
+                                                                                <option value="64">
+                                                        G.PADMAVATHI - APSPKL</option>
+                                                                                <option value="8">
+                                                        G.PRASAD - AIITJ</option>
+                                                                                <option value="284">
+                                                        G.SATYANARAYANA - ADC SRPM</option>
+                                                                                <option value="381">
+                                                        gowthamigrace - AJCKKDGC</option>
+                                                                                <option value="412">
+                                                        GUTTULA NAGA LAKSHMI - AJCBVM</option>
+                                                                                <option value="329">
+                                                        GV LAKHSMI - APSTPG</option>
+                                                                                <option value="84">
+                                                        GVLAKSHMI - AWDC KKD</option>
+                                                                                <option value="230">
+                                                        I PRASAD RAO - ABED</option>
+                                                                                <option value="189">
+                                                        I.prasad rao(BED) - ABED</option>
+                                                                                <option value="173">
+                                                        ISD.PRABHAVATHI(DSC) - AJCKKDMC</option>
+                                                                                <option value="41">
+                                                        JC - AJCKKDMC</option>
+                                                                                <option value="196">
+                                                        JCPKL - AJCPKL</option>
+                                                                                <option value="461">
+                                                        K NAGAMANI - AJCBVM</option>
+                                                                                <option value="511">
+                                                        K V SASIKALA - ADC VZM</option>
+                                                                                <option value="194">
+                                                        K.ARUNA KUMARI(AWDC) - AWDC KKD</option>
+                                                                                <option value="383">
+                                                        k.sandeepreddy - AWDC RJY</option>
+                                                                                <option value="233">
+                                                        K.SATYANARAYANA - APSJKP</option>
+                                                                                <option value="35">
+                                                        K.SOLOMON RAJU - ACAA</option>
+                                                                                <option value="229">
+                                                        K.SOLOMON RAJU - AWDC KKD</option>
+                                                                                <option value="408">
+                                                        K.UMA MAHESH REDDY - ADC SKLM</option>
+                                                                                <option value="300">
+                                                        KADA ARUNA REKHA - ACCE-BANK</option>
+                                                                                <option value="298">
+                                                        KPRAKASH - ADC BVM</option>
+                                                                                <option value="312">
+                                                        KSNMURTHY(ADCGPT) - AWDC GPT</option>
+                                                                                <option value="195">
+                                                        KSRAJAREDDY(PGKKD) - AIPGS</option>
+                                                                                <option value="268">
+                                                        KUMAR.AVSP - ADC PKL</option>
+                                                                                <option value="382">
+                                                        KVVRAMANA - ACCES</option>
+                                                                                <option value="398">
+                                                        Lakshyacashier - LAKSHYA</option>
+                                                                                <option value="231">
+                                                        M L N Reddy - APSSRI</option>
+                                                                                <option value="346">
+                                                        M Vijaya Lakshmi - ADC GPT</option>
+                                                                                <option value="61">
+                                                        M.JAYASREE - APSAMP</option>
+                                                                                <option value="314">
+                                                        Meka Saibaba - ADC PKL</option>
+                                                                                <option value="454">
+                                                        Mettu Durga Srinivas Raj - APSPTP</option>
+                                                                                <option value="211">
+                                                        MLNREDDY - AIPGS</option>
+                                                                                <option value="228">
+                                                        N ANIL KUMAR - APSSRI</option>
+                                                                                <option value="270">
+                                                        N S VISWESWARA RAO - ADC ASL</option>
+                                                                                <option value="170">
+                                                        N.ANIL KUMAR - APSJKP</option>
+                                                                                <option value="199">
+                                                        n.ramakrishna - ADC ASL</option>
+                                                                                <option value="377">
+                                                        nvijayalakshmi - LAKSHYA</option>
+                                                                                <option value="345">
+                                                        P. Suresh Reddy - AWDC ASL</option>
+                                                                                <option value="88">
+                                                        P.Nagi Reddy - ADC GPT</option>
+                                                                                <option value="74">
+                                                        P.PADMA - APSGMD</option>
+                                                                                <option value="89">
+                                                        P.R.K.REDDY - ADC ASL</option>
+                                                                                <option value="21">
+                                                        P.RAMAKRISHNA - AJCTPG</option>
+                                                                                <option value="198">
+                                                        P.SATYANARAYANA REDDY(CBSE) - CBSE</option>
+                                                                                <option value="27">
+                                                        P.SOMAREDDY - AJCRJY</option>
+                                                                                <option value="5">
+                                                        P.SRAVANA KUMAR - AJCKKDMC</option>
+                                                                                <option value="30">
+                                                        P.SRINIVAS - CBSE</option>
+                                                                                <option value="338">
+                                                        P.UMA LAKSHMI - AWDC ASL</option>
+                                                                                <option value="172">
+                                                        P.Vani Reddy - APSSRI</option>
+                                                                                <option value="438">
+                                                        P.vanitha - APSJKP</option>
+                                                                                <option value="352">
+                                                        pprasad - AWDC KKD</option>
+                                                                                <option value="259">
+                                                        PVSURYANARAYANA - ADC BVM</option>
+                                                                                <option value="351">
+                                                        R REVATHI - AJCKKDGC</option>
+                                                                                <option value="425">
+                                                        R VARA LAKSHMI - ACCES</option>
+                                                                                <option value="372">
+                                                        RAMA.P - LAKSHYA</option>
+                                                                                <option value="87">
+                                                        rambabu - ADC PKL</option>
+                                                                                <option value="424">
+                                                        S Tagore - APSTPG</option>
+                                                                                <option value="269">
+                                                        S.Jyothi Patnaik(adcasl-bschool) - ADC ASL-BSCHOOL</option>
+                                                                                <option value="24">
+                                                        S.RAVINDRA KUMAR - AJCMDP</option>
+                                                                                <option value="273">
+                                                        S.SURESHREDDY - ADC TPG</option>
+                                                                                <option value="471">
+                                                        SANAPALA SRIKANTH - ADC SKLM</option>
+                                                                                <option value="379">
+                                                        SANAPALA VENKATA RAMANA - ADC BVM</option>
+                                                                                <option value="292">
+                                                        SATHI BABU SEELAM - ADC SRPM</option>
+                                                                                <option value="220">
+                                                        satyakala.ch - ACMS</option>
+                                                                                <option value="427">
+                                                        School Operator - APSSRI</option>
+                                                                                <option value="479">
+                                                        schoolreports - APSSRI</option>
+                                                                                <option value="238">
+                                                        sitaramsurubhotla - ADC AMP</option>
+                                                                                <option value="386">
+                                                        ssrikanth - ADC GWK</option>
+                                                                                <option value="333">
+                                                        sunil - AJCKKDMC</option>
+                                                                                <option value="160">
+                                                        T.GANGADHAR(CBSE) - CBSE</option>
+                                                                                <option value="11">
+                                                        TIKKA PRASAD - AJCAMP</option>
+                                                                                <option value="514">
+                                                        TVDPRASAD - AJCVSP</option>
+                                                                                <option value="78">
+                                                        U.K.DURGA(SPKL) - APSPKL</option>
+                                                                                <option value="17">
+                                                        V.SRINIVAS RAO - AJCBVM</option>
+                                                                                <option value="468">
+                                                        V.TANUJAA - ADC KKD</option>
+                                                                                <option value="294">
+                                                        vijay - CBSE</option>
+                                                                                <option value="448">
+                                                        vkesavarao - ADC PKL</option>
+                                                                                <option value="442">
+                                                        VSVV SATYANARAYANA - ABED</option>
+                                                                                <option value="37">
+                                                        Y.SATYANARAYANA - AJCNSP</option>
+                                                                      </select>         
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <!--Term Fee-->
+                                      
+                                     <div class="row" >
+                                         <div class="col-md-6">	 
+                                             <div class="form-group" >
+                                                 <div class="input-group" >
+                                                     <div class="input-group-addon">
+
+                                                     </div>
+
+                                                        <input type="text" id="feeDate" ng-model='feeDate' class="form-control col-8" value="01/01/2021 - 01/15/2021" required name="daterange"/>
+                                                        <div style="margin: 5px; height: 10px; width: 5px;"><i class="far fa-calendar-alt fa-2x"></i>
+                                                        </div>
+                                                  </div>
+                                             </div>
+                                          </div> 
+
+
+                                          <!-- <div class="col-md-6">
+                                            <div class="row">
+                                                  <div class="col-md-8" >	
+                                                      <a href="#" class="btn btn-primary" onclick="get_date();" style=" background-color: rgb(141, 162, 221);">Submit</a>
+                                                  </div>
+                                                  <div class="col-md-4" align="right">
+                                                  <a href="#" onclick="printTable('dcr'); return false;"><i class="fa fa-print  fa-2x"></i></a> 
+                                                  &nbsp;
+                          
+                                              <a download="Accounts-[26-11-2021 To 02-12-2021].xls" href="#" onclick="return ExcellentExport.excel(this, 'datatable', 'Sheet Name Here');"><i class="fa fa-file-text   fa-2x"></i></a>
+                                                  </div>
+                                          </div>
+                                      </div> -->
+
+
+
+
+                                          
+                                          <div class="col-md-5">
+                                            <div class="row" class="col-md-5">
+                                                  <div class="col-md-5">	
+                                                      <a href="#" class="btn btn-primary" onclick="get_date();">Submit</a>
+                                                  </div>
+                                                  <div class="col-md-4" align="right">
+                                                  <a href="#" onclick="printTable('dcr'); return false;"><i class="fa fa-print  fa-2x"></i></a> 
+                                                  &nbsp;
+                                                  <a download="Accounts-[01-12-2021 To 01-12-2021].xls" href="#" onclick="return ExcellentExport.excel(this, 'datatable', 'Sheet Name Here');"><i class="fa fa-file-text   fa-2x"></i></a>
+                                                  </div>
+                                          </div>
+                                      </div>
+                                 </div>
+                       </div>
+                    </div>
+                    
+
+                    <div class="col-12" ng-hide='nodata'>
+                        <h6 style="text-align: center;" class="text-danger">No Data Found!</h6>
+                    </div>
+                    <div id='report'>
+
+                        <div id="datatable">
+ 
+ 		   
+                            <div class="table-responsive"> 
+                            <table class="table table-bordered" style="margin-bottom:5px; width:100%; line-height:20px; border:1" cellpadding="10" cellspacing="0">
+                            <tbody><tr class="info">
+                                <td colspan="8" style="font-weight:600;color:black;background-color: rgb(211, 238, 255);" align="center"> Cash Register (in Rupees)</td>
+                             </tr>
+                            <tr>
+                            <td>Cashier Name:</td>
+                            <td>Accounts</td>
+                            <td style="text-align:right">Date:</td>
+                            <td>{{fromDate| date : 'dd/MM/yyyy'}}  -  {{toDate| date : 'dd/MM/yyyy'}}</td>
+                            </tr>
+                            <tr><td style="text-align:right" colspan="3">Total:</td>
+                            <td style="text-align:right"> 0</td>
+                            </tr>
+                            <table width="100%" style="margin-top:10px"; height="70"; border:"0"; cellspacing="0"; cellpadding="10">
+                                <tbody><tr>
+                                  <td>&nbsp;</td>
+                                  <td align="center" valign="bottom" width="100">Accounts</td>
+                                </tr>
+                              </tbody></table>
+                            </tbody></table>
+                            </div>
+                              
+                            <div class="table-responsive"> 
+                                <table class="table table-bordered" style="margin-bottom:5px; width:100%; line-height:20px;" border="1" cellpadding="2" cellspacing="0">
+                                <tbody><tr class="info">
+                                         <td colspan="8" style="font-weight:600;color:black;background-color: rgb(211, 238, 255);" align="center"> Cash Register (in Dollars)</td>
+                                 </tr>
+                                <tr>
+                                <td>Cashier Name:</td>
+                                <td>Accounts</td>
+                                <td style="text-align:right">Date:</td>
+                                <td>{{fromDate| date : 'dd/MM/yyyy'}}  -  {{toDate| date : 'dd/MM/yyyy'}}</td>
+                                </tr>
+                                <tr><td style="text-align:right" colspan="3">Total:</td>
+                                <td style="text-align:right"> 0</td>
+                                </tr>
+                                <table width="100%" style="margin-top:10px" height="70" border="0" cellspacing="0" cellpadding="5">
+                                    <tbody><tr>
+                                      <td>&nbsp;</td>
+                                      <td align="center" valign="bottom" width="100">Accounts</td>
+                                    </tr>
+                                  </tbody></table> 
+                                </tbody></table>
+                                </div>
+                        <table ng-repeat='i in CashierModeData' class="table table-striped table-bordered" style="width:100%;font-size: 12px;"  ng-hide='section' >
+                            <thead class="reptable">
+                                <tr ng-if='i[$index].cancelled==0'>
+                                   <th colspan="12" class="text-center bg-info">Payed</th> 
+                                </tr>
+                                <tr ng-if='i[$index].cancelled!=0'>
+                                   <th colspan="12" class="text-center bg-info">Cancelled</th>
+                                </tr>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Date</th>
+                                    <th>Student name</th>
+                                    <th>Group</th>
+                                    <th>Campus</th>
+                                    <th>Cashier</th>
+                                    <th>Payment Type</th>
+                                    <th>Receipt No</th>
+                                    <th>Swipe/Cheque No	</th>
+                                    <th>Amount</th>
+                                    <th>Fine</th>
+                                    <th>GST</th>
+                                </tr>
+                            </thead>
+                            <tbody class="" ng-repeat='x in i' ng-switch='x.payment_type'>
+                                <tr >
+                                    <td>{{$index+1}}</td>
+                                    <td style="width: 150px;">{{x.payment_date.split('T')[0]}}</td>
+                                    <td>{{x.first_name+" "+x.last_name}}</td>
+                                    <td>{{x.course_name}}</td>
+                                    <td>{{x.campus_name}}</td>
+                                    <td>{{x.user_name}}</td>
+                                    <td ng-switch-when="1">Cash</td>
+                                    <td ng-switch-when="2">Check</td>
+                                    <td ng-switch-when="3">DD</td>
+                                    <td ng-switch-when="4">Online</td>
+                                    <td ng-switch-when="5">Swipe</td>
+                                    <td style="width: 200px;">{{x.receipt_no}}</td>
+                                    <td>{{x.cheque_no +" - "+ x.bank_name}}</td>
+                                    <td>{{x.amt}}</td>
+                                    <td>{{x.fine}}</td>
+                                    <td>{{x.gst_paid}}</td>
+                                </tr>
+                                
+                            </tbody>
+                            <tfoot>
+                                <tr ng-if='i[$index].cancelled==0'>
+                                    <th class="text-right" colspan="9">Total</td>
+                                    <td>{{cashTotal| number:0}}</td>
+                                    <td>{{fineTotal| number:0}}</td>
+                                    <td>{{cashTotal| number:0}}</td>
+                                </tr>
+                                <tr ng-if='i[$index].cancelled!=0'>
+                                    <th class="text-right" colspan="9">Total</td>
+                                    <td>{{cashTotalcancelled| number:0}}</td>
+                                    <td>{{fineTotalcancelled| number:0}}</td>
+                                    <td>{{cashTotalcancelled| number:0}}</td>
+                                </tr>
+
+                            </tfoot>
+                        </table>
+                    </div>
+                    </div>
+                </section>
+					
+            </div>
+        </section>
+    </div>
+<script>
+function printReport() {
+    window.print()
+}    
+$('.pdfbtn').click(function(){
+    $('#rey').show()
+    setTimeout(function() {
+        $('#rey').hide();
+    }, 1000);
+})    
+</script>

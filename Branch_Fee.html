@@ -1,0 +1,335 @@
+<style>
+    @media print{
+        button,.btn,#feeDate,#im{
+          visibility:hidden;
+        }
+      }
+      @page { size: auto;  margin: 0mm; }
+</style>
+
+<div ng-app="library" ng-controller="Branch Fee" ng-init='section=true;nodata=true;amountDets=true;loading=false;'>
+        <!-- header logo: style can be found in header.less -->
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                <h4 class="m-0 text-dark">Branch Fee &nbsp;&nbsp;&nbsp;</h4>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Branch Fee</li>
+                </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+        <section class="content">
+            <div class="box box-primary">				
+            <div class="box-body">
+            
+                    <div class="row">
+                                         
+                                <div class="col-md-5 form-group">
+            
+                       <select name="school_id" id="school_id" class="form-control" onchange="getschoolid(this);">
+                 <option selected="selected" value="--SELECT SCHOOL/COLLEGE--">--SELECT SCHOOL/COLLEGE--</option>
+                                                                    
+                                                                        <option value="3">
+                                    ADITYA SCHOOL(APSKKD)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="13">
+                                    ADITYA SCHOOL(APSJKP)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA(JKP)</option>
+                                                            <option value="14">
+                                    ADITYA SCHOOL(APSAMP)&nbsp;&nbsp;-&nbsp;&nbsp;AMALAPURAM</option>
+                                                            <option value="15">
+                                    ADITYA SCHOOL(APSPKL)&nbsp;&nbsp;-&nbsp;&nbsp;PALAKOLLU</option>
+                                                            <option value="16">
+                                    ADITYA SCHOOL(APSNSP)&nbsp;&nbsp;-&nbsp;&nbsp;NARASAPURAM</option>
+                                                            <option value="17">
+                                    ADITYA SCHOOL(APSPTP)&nbsp;&nbsp;-&nbsp;&nbsp;PITHAPURAM</option>
+                                                            <option value="18">
+                                    ADITYA SCHOOL(APSGMD)&nbsp;&nbsp;-&nbsp;&nbsp;G MAMIDADA</option>
+                                                            <option value="49">
+                                    ADITYA SCHOOL(ADITYA SCHOOL)&nbsp;&nbsp;-&nbsp;&nbsp;IIT-AMALAPURAM</option>
+                                                            <option value="67">
+                                    ADITYA SCHOOL(APSTPG)&nbsp;&nbsp;-&nbsp;&nbsp;TADEPALLIGUDEM</option>
+                                                            <option value="1">
+                                    ADITYA JUNIOR COLLEGE(AJCKKD)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="2">
+                                    SRI SAI ADITYA JUNIOR COLLEGE(SAJCKKD)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="4">
+                                    ADITYA JUNIOR COLLEGE(AJCAMP)&nbsp;&nbsp;-&nbsp;&nbsp;AMALAPURAM</option>
+                                                            <option value="5">
+                                    ADITYA JUNIOR COLLEGE(AJCPKL)&nbsp;&nbsp;-&nbsp;&nbsp;PALAKOLLU</option>
+                                                            <option value="6">
+                                    ADITYA JUNIOR COLLEGE(AJCNSP)&nbsp;&nbsp;-&nbsp;&nbsp;NARASAPURAM</option>
+                                                            <option value="7">
+                                    ADITYA JUNIOR COLLEGE(AJCBVM)&nbsp;&nbsp;-&nbsp;&nbsp;BHIMAVARAM</option>
+                                                            <option value="8">
+                                    SRI SAI ADITYA JUNIOR COLLEGE(SAJCBVM)&nbsp;&nbsp;-&nbsp;&nbsp;BHIMAVARAM</option>
+                                                            <option value="9">
+                                    ADITYA JUNIOR COLLEGE(AJCTPG)&nbsp;&nbsp;-&nbsp;&nbsp;TADEPALLIGUDEM   08818-227575,226464</option>
+                                                            <option value="10">
+                                    ADITYA JUNIOR COLLEGE(AJCMDP)&nbsp;&nbsp;-&nbsp;&nbsp;MANDAPETA</option>
+                                                            <option value="11">
+                                    ADITYA JUNIOR COLLEGE(AJCRJY)&nbsp;&nbsp;-&nbsp;&nbsp;RAJAMAHENDRAVARAM</option>
+                                                            <option value="28">
+                                    ADITYA ACADEMY(AA)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="60">
+                                    ADITYA JUNIOR COLLEGE(AJCSKLM)&nbsp;&nbsp;-&nbsp;&nbsp;SRIKAKULAM</option>
+                                                            <option value="61">
+                                    ADITYA JUNIOR COLLEGE(AJCELR)&nbsp;&nbsp;-&nbsp;&nbsp;ELURU</option>
+                                                            <option value="75">
+                                    ADITYA JUNIOR COLLEGE(AJCVSP)&nbsp;&nbsp;-&nbsp;&nbsp;VISAKHAPATNAM</option>
+                                                            <option value="76">
+                                    SRI SAI ADITYA JUNIOR COLLEGE(SSAJCRJY)&nbsp;&nbsp;-&nbsp;&nbsp;RAJAMAHENDRAVARAM</option>
+                                                            <option value="19">
+                                    ADITYA DEGREE COLLEGE(ADCKKD)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="20">
+                                    ADITYA DEGREE COLLEGE for WOMEN(AWDCKKD)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="21">
+                                    ADITYA DEGREE COLLEGE(ADCRJY)&nbsp;&nbsp;-&nbsp;&nbsp;RAJAMAHENDRAVARAM</option>
+                                                            <option value="22">
+                                    ADITYA DEGREE COLLEGE for WOMEN(AWDCRJY)&nbsp;&nbsp;-&nbsp;&nbsp;RAJAMAHENDRAVARAM</option>
+                                                            <option value="23">
+                                    ADITYA DEGREE COLLEGE(ADCPKL)&nbsp;&nbsp;-&nbsp;&nbsp;PALAKOLLU</option>
+                                                            <option value="24">
+                                    ADITYA DEGREE COLLEGE(ADCASL)&nbsp;&nbsp;-&nbsp;&nbsp;VISAKHAPATNAM</option>
+                                                            <option value="25">
+                                    ADITYA DEGREE COLLEGE(ADCGPT)&nbsp;&nbsp;-&nbsp;&nbsp;VISAKHAPATNAM</option>
+                                                            <option value="26">
+                                    ADITYA DEGREE COLLEGE (ADCGWK)&nbsp;&nbsp;-&nbsp;&nbsp;GAJUWAKA</option>
+                                                            <option value="53">
+                                    ADITYA DEGREE COLLEGE(ADCAMP)&nbsp;&nbsp;-&nbsp;&nbsp;AMALAPURAM</option>
+                                                            <option value="54">
+                                    ADITYA DEGREE COLLEGE(ADCBVM)&nbsp;&nbsp;-&nbsp;&nbsp;BHIMAVARAM</option>
+                                                            <option value="55">
+                                    ADITYA DEGREE COLLEGE(ADCTPG)&nbsp;&nbsp;-&nbsp;&nbsp;TADEPALLIGUDEM</option>
+                                                            <option value="56">
+                                    ADITYA DEGREE COLLEGE(ADCELR)&nbsp;&nbsp;-&nbsp;&nbsp;ELURU</option>
+                                                            <option value="57">
+                                    ADITYA DEGREE COLLEGE(ADCSKLM)&nbsp;&nbsp;-&nbsp;&nbsp;SRIKAKULAM</option>
+                                                            <option value="58">
+                                    KAKINADA ADITYA DEGREE COLLEGE(AWDCSKLM)&nbsp;&nbsp;-&nbsp;&nbsp;SRIKAKULAM</option>
+                                                            <option value="62">
+                                    ADITYA DEGREE COLLEGE(ADCVZM)&nbsp;&nbsp;-&nbsp;&nbsp;Vizianagaram</option>
+                                                            <option value="65">
+                                    ADITYA DEGREE COLLEGE(ADCSRPM)&nbsp;&nbsp;-&nbsp;&nbsp;SURAMPALEM</option>
+                                                            <option value="68">
+                                    ADITYA DEGREE COLLEGE(ADCTUN)&nbsp;&nbsp;-&nbsp;&nbsp;TUNI</option>
+                                                            <option value="77">
+                                    SRI ADITYA DEGREE COLLEGE(SADCBVM)&nbsp;&nbsp;-&nbsp;&nbsp;BHIMAVARAM</option>
+                                                            <option value="27">
+                                    ADITYA COLLEGE OF COMPETITIVE EXAMINATIONS(ACCE(POLYTECH))&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="39">
+                                    ADITYA COLLEGE OF COMPETITIVE EXAMINATIONS(ACCE(DSC))&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="40">
+                                    ADITYA COLLEGE OF COMPETITIVE EXAMINATIONS(ACCE)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="41">
+                                    ADITYA COLLEGE OF EDUCATION(ABED)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="42">
+                                    ADITYA TELUGU PANDIT TRAINING COLLEGE(ATPT)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="43">
+                                    SRI SAI ADITYA TELUGU PANDIT TRAINING COLLEGE(STPT)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="44">
+                                    ADITYA HINDI PANDIT TRAINING COLLEGE(AHPT)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="45">
+                                    SRI SAI ADITYA HINDI PANDIT TRAINING COLLEGE(SHPT)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="46">
+                                    ENGINEERS ACADEMY (ENGAA)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="51">
+                                    ADITYA COLLEGE OF DIPLOMA IN ELEMENTARY EDUCATION(D.Ed)(AD.Ed)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="52">
+                                    ADITYA COLLEGE OF DIPLOMA IN ELEMENTARY EDUCATION FOR WOMEN(AD.EdW)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="59">
+                                    Aditya College of Media Sciences(ACMS)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="64">
+                                    ADITYA ACADEMY(ACCE(RJY))&nbsp;&nbsp;-&nbsp;&nbsp;RAJAMAHENDRAVARAM</option>
+                                                            <option value="66">
+                                    ADITYA COLLEGE OF COMPETITIVE EXAMS(ACCE(DSC-2018))&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="70">
+                                    ADITYA POLYTENIC COACHING(ACEEP)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="73">
+                                    ADITYA COLLEGE OF COMPETITIVE EXAMS(ACCES)&nbsp;&nbsp;-&nbsp;&nbsp;KANINADA</option>
+                                                            <option value="74">
+                                    ADITYA POLICE ACADEMY(APA)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="29">
+                                    Aditya Institute of PG Studies(AIPGS)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="30">
+                                    Aditya Engineering College(AEC)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="31">
+                                    Aditya College of Engineering &amp; Technology(ACET)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="32">
+                                    ADITYA COLLEGE OF ENGINEERING(ACES)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="33">
+                                    Aditya Degree College(PG Courses)(ADPG)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="34">
+                                    Aditya Degree College(PG Courses)For Women(ADPGW)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="38">
+                                    ADITYA DEGREE COLLEGES PG STUDIES(ADCPGS)&nbsp;&nbsp;-&nbsp;&nbsp;VISHAKAPATNAM(GPT)</option>
+                                                            <option value="69">
+                                    ADITYA GLOBAL BUSINESS SCHOOL(AGBS)&nbsp;&nbsp;-&nbsp;&nbsp;SURAMPALEM</option>
+                                                            <option value="35">
+                                    ADITYA COLLEGE OF NURSING(ACN)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="36">
+                                    ADITYA SCHOOL OF NURSING(ASN)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="37">
+                                    FLORENCE NIGHTINGALE SCHOOL OF NURSING(FNSN)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="48">
+                                    LAKSHYA SCHOOL(LAKSHYA SCHOOL)&nbsp;&nbsp;-&nbsp;&nbsp;E.G.Dist</option>
+                                                            <option value="50">
+                                    ADITYA HIGH SCHOOL (E.M)(APSGRG)&nbsp;&nbsp;-&nbsp;&nbsp;KAKINADA</option>
+                                                            <option value="71">
+                                    ADITYA SCHOOL(AIITSPKL)&nbsp;&nbsp;-&nbsp;&nbsp;PALAKOLLU</option>
+                                                  </select>
+             
+            </div>
+                                 
+            </div>
+            <div style="clear:both"></div>	
+             <div id="datatable">
+                
+            <div class="row" id="dcr"> 
+            <div class="col-md-12">
+             
+            
+            
+                    
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                                 
+                   
+            
+                 
+                             
+                    
+                    </div>
+                                
+            
+            
+            
+                    
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                            
+                    
+                
+                            
+                        <p style="page-break-after:always"></p>
+            
+                        
+                                 
+                   
+            
+                 
+                             
+                    
+                    </div>
+                                
+            </div>
+            </div>
+            </div>
+            </section>
+    
+        

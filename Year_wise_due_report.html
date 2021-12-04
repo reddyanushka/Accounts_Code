@@ -1,0 +1,167 @@
+<style>
+    @media print{
+        button,.btn,#feeDate,#im{
+          visibility:hidden;
+        }
+      }
+      @page { size: auto;  margin: 0mm; }
+</style>
+
+<div ng-app="library" ng-controller="Year Wise Due Report" ng-init='section=true;nodata=true;amountDets=true;loading=false;'>
+        <!-- header logo: style can be found in header.less -->
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                <h4 class="m-0 text-dark">Year Wise Due Report &nbsp;&nbsp;&nbsp;</h4>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Year Wise Due Report</li>
+                </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <section class="content">
+            <div class="box box-primary">
+            <div class="box-body">
+            <div class="row">
+            <div class="col-md-3 form-group"> 
+             <select name="campus_id" id="campus_id" onchange="get_campusid(this)" class="form-control">
+             <option value="">Select Campus</option>
+                                                                                       
+                                    <option value="30">
+                                    ADC KKD</option>
+                                                            
+                                    <option value="31">
+                                    AWDC KKD</option>
+                                                            
+                                    <option value="32">
+                                    ADC RJY</option>
+                                                            
+                                    <option value="33">
+                                    AWDC RJY</option>
+                                                            
+                                    <option value="34">
+                                    ADC PKL</option>
+                                                            
+                                    <option value="35">
+                                    ADC ASL</option>
+                                                            
+                                    <option value="36">
+                                    ADC GPT</option>
+                                                            
+                                    <option value="37">
+                                    ADC GWK</option>
+                                                            
+                                    <option value="61">
+                                    ADC AMP</option>
+                                                            
+                                    <option value="62">
+                                    ADC TPG</option>
+                                                            
+                                    <option value="63">
+                                    ADC ELR</option>
+                                                            
+                                    <option value="64">
+                                    ADC SKLM</option>
+                                                            
+                                    <option value="65">
+                                    ADC BVM</option>
+                                                            
+                                    <option value="66">
+                                    AWDC SKLM</option>
+                                                            
+                                    <option value="71">
+                                    ADC VZM</option>
+                                                            
+                                    <option value="72">
+                                    ADC ASL-BSCHOOL</option>
+                                                            
+                                    <option value="75">
+                                    ADC SRPM</option>
+                                                            
+                                    <option value="76">
+                                    ASCS KKD</option>
+                                                            
+                                    <option value="79">
+                                    ADC TUN</option>
+                                                            
+                                    <option value="80">
+                                    AWDC ASL</option>
+                                                            
+                                    <option value="81">
+                                    AGBS</option>
+                                                            
+                                    <option value="86">
+                                    AWDC GPT</option>
+                                                            
+                                    <option value="91">
+                                    ADC RJY-ANM</option>
+                                                            
+                                    <option value="92">
+                                    ASMS KKD</option>
+                                                            
+                                    <option value="93">
+                                    ADC SRPM-BSCHOOL</option>
+                                                            
+                                    <option value="95">
+                                    SADCBVM</option>
+                                                                                      </select>
+             
+             </div>
+            
+                    
+            <div class="col-md-3 form-group"> 
+            <a download=" term--DueList.xls" href="#" onclick="return ExcellentExport.excel(this, 'due_report', 'Sheet Name Here');">
+                   <i class="fa fa-file-excel-o   fa-2x"></i></a>
+               &nbsp;
+            <!--<a href="#"  data-inline="true" data-theme="b" onClick="printTable('due_report'); return false;" style="float:left; margin-right:10px;"><i class="fa fa-print  fa-2x"></i></a>-->
+               &nbsp;
+             </div>
+             </div>
+              
+            
+            <div id="due_report" style="overflow-x:scroll"> 
+            
+             <table class="table table-bordered" border="1" cellpadding="3" cellspacing="0">   
+              <tbody><tr class="bg-blue">
+                      
+              <td colspan="1" align="right">Section</td><td colspan="3"></td>
+              <td rowspan="2">2018-2019</td><td rowspan="2">2019-2020</td>
+              <td colspan="2" align="center">2020-2021</td>
+              <td rowspan="2">TOTAL</td>
+              </tr> 
+            
+             
+             
+                 <tr class="info">
+                <td>Course</td>
+                <td>RNO</td>
+                <td>Name</td>
+                <td>Mobile</td>
+                
+            
+                <td>SEM-I</td>
+                <td>SEM-II</td>
+                 </tr>
+                 
+                      
+                
+                
+                
+                 
+            </tbody></table>	 
+            
+            
+            </div>
+            
+            </div>
+            </div>
+            </section>
+    

@@ -1,0 +1,28 @@
+<style>
+    @media print{
+        button,.btn,#feeDate,#im{
+          visibility:hidden;
+        }
+      }
+      @page { size: auto;  margin: 0mm; }
+</style>
+
+<div ng-app="library" ng-controller="Stock Delivery Report" ng-init='section=true;nodata=true;amountDets=true;loading=false;'>
+        
+        
+        <div class="content-header">
+            <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                <h4 class="m-0 text-dark">Stock Delivery Report &nbsp;&nbsp;&nbsp;<i class="fas fa-sync fa-spin" ng-show='loading'></i></h4>
+                </div>
+                <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Stock Delivery Report</li>
+                </ol>
+                </div>
+            </div>
+            </div>
+        </div>
+    

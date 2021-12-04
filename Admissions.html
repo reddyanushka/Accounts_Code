@@ -1,0 +1,89 @@
+<style>
+    @media print{
+        button,.btn,#feeDate,#im{
+          visibility:hidden;
+        }
+      }
+      @page { size: auto;  margin: 0mm; }
+</style>
+
+<div ng-app="library" ng-controller="Cashier" ng-init='section=true;nodata=true;amountDets=true;loading=false;'>
+        <!-- header logo: style can be found in header.less -->
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                <h4 class="m-0 text-dark">Admissions &nbsp;&nbsp;&nbsp;</h4>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Admissions</li>
+                </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <section class="content">
+            <div class="box box-primary">				
+            <div class="box-body">
+                    <div class="table-responsive">
+            <div ng-controller="admissions_ctrl" class="ng-scope">
+                <div class="text-center">
+                     <i class="fa fa-spinner fa-spin fa-3x fa-fw " ng-show="loading"></i>
+                </div>	
+            
+            <table class="table" style="font-weight:bold;" border="0" cellpadding="0" cellspacing="0">
+                <tbody><tr>
+                    <td class="warning" style="border:1px solid #f4e89f;" align="center" width="20%">Registrations</td>
+                <td style="border:0;"></td>
+                    <td style="border:1px solid #a3d38d;" class="success" align="center" width="20%">Admissions</td>
+                    <td style="border:0;"></td>
+                    <td style="border:1px solid #d99f9f;" class="danger" align="center" width="20%">Dropout</td>
+                    <td style="border:0;"></td>
+                    <td style="border:1px solid #cccccc;" align="center" width="20%">Total</td>
+                    
+                </tr>
+            </tbody></table>
+            
+            
+            <br>
+            <!-- ngIf: loading==false -->
+            
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">×</button>
+                      <h4 class="modal-title">Registration Students List</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+            
+            </p><div id="example1_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row"><div class="col-xs-6"><div id="example1_length" class="dataTables_length"><label><select size="1" name="example1_length" aria-controls="example1"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="1000" selected="selected">1000</option></select> records per page</label></div></div><div class="col-xs-6"><div class="dataTables_filter" id="example1_filter"><label>Search: <input type="text" aria-controls="example1"></label></div></div></div><table class="table table-bordered table-hover dataTable" id="example1" border="1" cellspacing="0" aria-describedby="example1_info">
+             <thead>
+             <tr class="info" style="text-align:center" role="row"><th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="SNo  : activate to sort column descending" style="width: 0px;">SNo  </th><th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Course  : activate to sort column ascending" style="width: 0px;">Course  </th><th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Student Name : activate to sort column ascending" style="width: 0px;">Student Name </th><th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Information : activate to sort column ascending" style="width: 0px;">Information </th><th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Prev School : activate to sort column ascending" style="width: 0px;">Prev School </th><th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="PRO : activate to sort column ascending" style="width: 0px;">PRO </th><th class="sorting" role="columnheader" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Date: activate to sort column ascending" style="width: 0px;">Date</th></tr>
+                        </thead>
+                        
+              <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd"><td valign="top" colspan="7" class="dataTables_empty">No data available in table</td></tr></tbody></table><div class="row"><div class="col-xs-6"><div class="dataTables_info" id="example1_info">Showing 0 to 0 of 0 entries</div></div><div class="col-xs-6"><div class="dataTables_paginate paging_bootstrap"><ul class="pagination"><li class="prev disabled"><a href="#">← Previous</a></li><li class="next disabled"><a href="#">Next → </a></li></ul></div></div></div></div>
+            <p></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            
+            
+            </div>
+            </div>
+            </div>
+            </div>
+            </section>

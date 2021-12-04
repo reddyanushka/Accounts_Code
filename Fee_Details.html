@@ -1,0 +1,112 @@
+<style>
+    @media print{
+        button,.btn,#feeDate,#im{
+          visibility:hidden;
+        }
+      }
+      @page { size: auto;  margin: 0mm; }
+</style>
+
+<div ng-app="library" ng-controller="Fee Details" ng-init='section=true;nodata=true;amountDets=true;loading=false;'>
+        <!-- header logo: style can be found in header.less -->
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                <h4 class="m-0 text-dark">Fee Details &nbsp;&nbsp;&nbsp;</h4>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Fee Details</li>
+                </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <section class="content">
+            <div class="box box-primary">				
+            <div class="box-body">
+                <div class="row">
+                    <form action="" method="get" class="ng-pristine ng-valid">
+                        <div class="col-sm-6 form-group"><label>Institute</label>
+            <select name="inst_id" class="form-control" id="inst_id" data-mini="true" onchange="get_inst_id(this)">
+            <option value="">Select Institute</option>
+                            
+            <option value="1">SCHOOLS</option>
+                            
+            <option value="2">JUNIOR COLLEGE</option>
+                            
+            <option value="3">DEGREE COLLEGE</option>
+                            
+            <option value="4">COMPETITIVE</option>
+                            
+            <option value="5">PG COLLEGE</option>
+                            
+            <option value="6">NURSING</option>
+                            
+            <option value="7">INTERNATIONAL SCHOOL</option>
+                            
+            <option value="8">IIT SCHOOL</option>
+            </select>						
+            </div>	
+            <div class="col-sm-6 form-group">
+                <label>Campus</label>
+                <select name="campus_id" class="form-control" id="campus_id" data-mini="true" onchange="get_campus_id(this)">
+                                    <option value="">Select Campus</option>
+                                    <option value="22">APSSRI</option>
+                                    <option value="23">APSJKP</option>
+                                    <option value="24">APSAMP</option>
+                                    <option value="25">APSPKL</option>
+                                    <option value="26">APSNSP</option>
+                                    <option value="27">APSPTP</option>
+                                    <option value="28">APSGMD</option>
+                                    <option value="60">AIITSAMP-PRIMARY</option>
+                                    <option value="78">APSTPG</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+            <div class="table-responsive">															
+                <table class="table table-bordered">
+                 
+                <tbody><tr class="bg-blue">
+                <td colspan="5" style="text-align:center">GENERAL-Category</td>
+                </tr>
+                
+                </tbody></table>
+                </div>
+                <br>
+                <div class="table-responsive">															
+                    <table class="table table-bordered">
+                     
+                    <tbody><tr class="bg-blue">
+                    <td colspan="5" style="text-align:center">DAY-TO-HOSTEL-Category</td>
+                    </tr>
+                    
+                    </tbody></table>
+                    </div>
+                    <br>
+                    <div class="table-responsive">															
+                        <table class="table table-bordered">
+                         
+                        <tbody><tr class="bg-blue">
+                        <td colspan="5" style="text-align:center">New Admission-Category</td>
+                        </tr>
+                        
+                        </tbody></table>
+                        </div>
+                        <br>
+                        <div class="table-responsive">															
+                            <table class="table table-bordered">
+                             
+                            <tbody><tr class="bg-blue">
+                            <td colspan="5" style="text-align:center">Adapt-Category</td>
+                            </tr>
+                            
+                            </tbody></table>
+                            </div>
+ 
